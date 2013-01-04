@@ -7,15 +7,15 @@ Turns .foo to foo and bar to .bar
 
 Why?
 ====
-I often find myself creating files in "exoctic" locations and forgetting to make them a dot file. So instead of
+I often find myself creating files in "exoctic" locations and forgetting to make them a dot file . . . or making them dot files when I shouldn't So instead of
 
-mv /usr/local/bin/share/lib/init.d/service/file /usr/local/bin/share/lib/init.d/service/.file
+`mv /usr/local/bin/share/lib/init.d/service/file /usr/local/bin/share/lib/init.d/service/.file`
 
 I can just type
 
-dodl /usr/local/bin/share/lib/init.d/service/file
+`dodl /usr/local/bin/share/lib/init.d/service/file`
 
-About half as long . . . 
+Approximately half as long . . . 
 
 The Name?
 =========
