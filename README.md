@@ -19,4 +19,4 @@ Approximately half as long . . .
 
 The Name?
 =========
-Austrian for idiot.
+Austrian slang for idiot.
