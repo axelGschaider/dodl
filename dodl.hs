@@ -12,6 +12,7 @@ main = do
 offWithHisHead (x : []) = x
 offWithHisHead _        = error "usage: dodl file"
 
+-- there is some applicative way to do this.
 doesFileOrFolderExist f = do
   fileExist   <- doesFileExist f
   folderExist <- doesDirectoryExist f
