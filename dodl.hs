@@ -6,11 +6,14 @@ import System.FilePath.Posix
 
 main = do
   file <- fmap offWithHisHead getArgs
-  fileExists <- doesFileExist file
+  fileExists <- doesFileOrFolderExist file
   print fileExists
 
 offWithHisHead (x : []) = x
 offWithHisHead _        = error "usage: dodl file"
 
-
+doesFileOrFolderExist f = do
+  fileExist   <- doesFileExist f
+  folderExist <- doesDirectoryExist f
+  return (fileExist || folderExist)
 
