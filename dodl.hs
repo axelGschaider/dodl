@@ -3,6 +3,7 @@ module Main( main ) where
 import System.Directory
 import System.Environment
 import System.FilePath.Posix
+import Control.Applicative
 
 main = do
   file     <- fmap offWithHisHead getArgs >>= confirmExists
@@ -39,11 +40,8 @@ confirmExists f = do
   exist <- doesFileOrFolderExist f
   if exist then (return f) else error $ f ++ " doesn't exist"
 
--- there is some applicative way to do this.
-doesFileOrFolderExist f = do
-  fileExist   <- doesFileExist f
-  folderExist <- doesDirectoryExist f
-  return (fileExist || folderExist)
+
+doesFileOrFolderExist f = (||) <$> (doesFileExist f) <*> (doesDirectoryExist f)
 
 transformFileName ('.':f) = f
 transformFileName f = '.' : f
